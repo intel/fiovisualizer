@@ -976,7 +976,7 @@ def find_numjobs():
                     numjobs = int(i.split('=')[1])
 #Change numjobs for multi-job file here 
 
-   if numjobs == None:
+    if numjobs == None:
         warningbox = QtGui.QMessageBox()
         reply = warningbox.question(warningbox, 'Warning', 'Failed to find numjobs value. If not defined, FIO will be launched with --numjobs=1. Are you sure you want to continue?', QtGui.QMessageBox.Yes | QtGui.QMessageBox.No, QtGui.QMessageBox.No)
         if reply == warningbox.Yes:
