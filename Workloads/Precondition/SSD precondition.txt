@@ -1,0 +1,30 @@
+There are multiple ways how you can prepare the drive for the benchmarking. 
+Here are basic steps to follow to get reliable data at the end:
+1. Secure Erase SSD
+
+2. Fill SSD with sequential data twice of it's capacity. This will gurantee all available 
+   memory is filled with a data including factory provisioned area. DD is the easiest way for this:
+   dd if=/dev/zero bs=1024k of=/dev/"devicename"
+
+3. If you're running sequential workload to estimate the read or write throughput then skip the next step.
+
+4. Fill the drive with 4k random data. The same rule, total amount of data is twice drive's capacity.
+   Use FIO for this purpose. Here is an example script for NVMe SSD:
+	[global]
+	name=4k random write 4 ios in the queue in 32 queues
+	filename=/dev/nvme0n1
+	ioengine=libaio
+	direct=1
+	bs=4k
+	rw=randwrite
+	iodepth=4
+	numjobs=32
+	buffered=0
+	size=100%
+	loops=2	
+	[job1]
+ 
+5. Run your workload. Usually meassurements starts after 5 minutes of runtime in order to let the SSD FW 
+   adopting to the workload. It's called sustained performance state. This time depends on the SSD 
+   Vendor/SKU/capacity.  
+ 
