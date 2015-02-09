@@ -56,19 +56,19 @@ class uiMainWindow(object):
         y_axis_read_iops.setLabel('Read IOPs (IOP/s)<br><br>')
         y_axis_read_iops.setStyle(autoExpandTextSpace=False)
         y_axis_write_iops=pg.AxisItem(orientation='left')
-        y_axis_write_iops.setLabel('<br>Write IOPs (IOP/s)<br><br')
+        y_axis_write_iops.setLabel('<br>Write IOPs (IOP/s)<br><br>')
         y_axis_write_iops.setStyle(autoExpandTextSpace=False)
         y_axis_read_bw=pg.AxisItem(orientation='left')
-        y_axis_read_bw.setLabel('Read BW (MB/s)<br><br')
+        y_axis_read_bw.setLabel('Read BW (MB/s)<br><br>')
         y_axis_read_bw.setStyle(autoExpandTextSpace=False)
         y_axis_write_bw=pg.AxisItem(orientation='left')
-        y_axis_write_bw.setLabel('<br>Write Bw (MB/s)<br><br')
+        y_axis_write_bw.setLabel('<br>Write Bw (MB/s)<br><br>')
         y_axis_write_bw.setStyle(autoExpandTextSpace=False)
         y_axis_read_lat=pg.AxisItem(orientation='left')
-        y_axis_read_lat.setLabel('Read latency (ms)<br><br')
+        y_axis_read_lat.setLabel('Read latency (ms)<br><br>')
         y_axis_read_lat.setStyle(autoExpandTextSpace=False)
         y_axis_write_lat=pg.AxisItem(orientation='left')
-        y_axis_write_lat.setLabel('<br>Write latency (ms)<br><br')
+        y_axis_write_lat.setLabel('<br>Write latency (ms)<br><br>')
         y_axis_read_lat.setStyle(autoExpandTextSpace=False)
         x_axis_read_iops = dateAxis(orientation='bottom')
         x_axis_write_iops = dateAxis(orientation='bottom')
@@ -270,6 +270,7 @@ class uiMainWindow(object):
         self.read_bw_plot.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.read_bw_plot.setBaseSize(QtCore.QSize(0, 0))
         self.read_bw_plot.setAccessibleName(_fromUtf8(""))
+        self.read_bw_plot.setInteractive(True)
         self.read_bw_plot.setObjectName(_fromUtf8("read_bw_plot"))
         self.read_lat_plot = pg.PlotWidget(self.splitter, axisItems={'left': y_axis_read_lat, 'bottom':x_axis_read_lat})
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
@@ -974,7 +975,7 @@ def find_numjobs():
             for i in parse_jobfile_test_output.split('--'):
                 if 'numjobs' in i:
                     numjobs = int(i.split('=')[1])
-#Change numjobs for multi-job file here 
+#Change numjobs for multi-job file here
 
     if numjobs == None:
         warningbox = QtGui.QMessageBox()
