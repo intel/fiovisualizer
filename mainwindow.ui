@@ -1211,7 +1211,7 @@
            <string notr="true"/>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <property name="usesScrollButtons">
            <bool>true</bool>
@@ -1487,10 +1487,6 @@
                 </widget>
                </item>
               </layout>
-              <zorder>read_bw_checkbox</zorder>
-              <zorder>read_bw_total_checkbox</zorder>
-              <zorder>read_bw_threads_checkbox</zorder>
-              <zorder>frame_9</zorder>
              </widget>
             </item>
             <item row="2" column="0">
@@ -1554,6 +1550,9 @@
                </item>
                <item row="0" column="1">
                 <widget class="QCheckBox" name="read_lat_max_checkbox">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                    <horstretch>0</horstretch>
@@ -1583,7 +1582,7 @@ clat_max)</string>
                   <string notr="true"/>
                  </property>
                  <property name="checked">
-                  <bool>true</bool>
+                  <bool>false</bool>
                  </property>
                 </widget>
                </item>
@@ -1614,6 +1613,9 @@ clat_max)</string>
                  </property>
                  <property name="shortcut">
                   <string notr="true"/>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
                  </property>
                 </widget>
                </item>
@@ -1964,7 +1966,7 @@ clat_max)</string>
 clat_max)</string>
                  </property>
                  <property name="checked">
-                  <bool>true</bool>
+                  <bool>false</bool>
                  </property>
                 </widget>
                </item>
@@ -1995,6 +1997,9 @@ clat_max)</string>
                  </property>
                  <property name="text">
                   <string>All clat_avg</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
                  </property>
                 </widget>
                </item>
