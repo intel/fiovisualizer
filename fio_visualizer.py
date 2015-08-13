@@ -7,6 +7,8 @@ import os
 import signal
 import threading
 import shlex, time
+import sys
+
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -963,6 +965,7 @@ def kill_fio():
 def find_numjobs():
     global numjobs
     numjobs=None
+    msgBox = QtGui.QMessageBox()
     arguments=str(ui.fio_arguments.text()).strip()
     jobfile=str(ui.fio_jobfile_path.text())
     if arguments != '':
@@ -972,7 +975,10 @@ def find_numjobs():
                     numjobs = int(i.split('=')[1])
     if jobfile != '':
         parse_jobfile_test = subprocess.Popen(['fio', '--showcmd', jobfile], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        parse_jobfile_test_output, parse_jobfile_test_error = parse_jobfile_test.communicate()
+        #parse_jobfile_test_output, parse_jobfile_test_error = parse_jobfile_test.communicate()
+        parse_jobfile_test_output = parse_jobfile_test.communicate()[0]
+        parse_jobfile_test_output = parse_jobfile_test_output.decode("utf-8")
+        #reply = msgBox.information(None, '', parse_jobfile_test_output)                                
         if '--numjobs' in parse_jobfile_test_output:
             for i in parse_jobfile_test_output.split('--'):
                 if 'numjobs' in i:
@@ -986,6 +992,9 @@ def find_numjobs():
             numjobs = 1
         if reply == warningbox.No:
             return False
+    else:
+        reply = msgBox.question(None, '',  "Starting '" + str(numjobs) + "' simultanious jobs")
+
 
 def parse_fio_output():
     global exit_code
@@ -1248,3 +1257,9 @@ ui.write_lat_checkbox.stateChanged.connect(write_lat_checkbox_handler)
 ui.start_button.clicked.connect(start_fio)
 ui.stop_button.clicked.connect(kill_fio)
 QtGui.QApplication.instance().exec_()
+
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv
+if __name__ == "__main__":
+    sys.exit(main())
