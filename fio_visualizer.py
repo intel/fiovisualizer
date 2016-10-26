@@ -1003,7 +1003,7 @@ def parse_fio_output():
         exit_code=None
         line = fio_process.stdout.readline()
         parsedline = line.split(";")
-        if len(parsedline) == 121:
+        if len(parsedline) >= 121:
             ui.start_button.setEnabled(False)
             ui.stop_button.setEnabled(True)
             if thread_number < numjobs:
