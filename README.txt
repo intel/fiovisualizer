@@ -1,4 +1,4 @@
- FIO visualizer 1.0 31 Dec 2014
+ FIO visualizer 1.1 13 Jan 2017
 
  DESCRIPTION
  -----------
@@ -32,8 +32,8 @@
  ------------
  Requires:
 
-  FIO 2.1.14, 2.2.x is currently not supported (http://freecode.com/projects/fio)
-  PyQtGraph (http://www.pyqtgraph.org/)
+  FIO 2.15 or newer (2.1.x is no longer supported) http://freecode.com/projects/fio
+  PyQtGraph http://www.pyqtgraph.org/
   Python 2.7 and 3+
   PyQt 4.8+ or PySide
   numpy
@@ -83,10 +83,11 @@
      with numjobs > 4 or disable unneccessary ones to save CPU time.
   2. Multi-jobs configurations files (i.e. [job1]... [job2]) are not supported at the moment.
      The total amount of jobs if every workload has "numjobs" specified too are not correctly parsed.
+     This can still be implemented manually specifing it in the code. See line #986.
 
  TODO
  ----
-  1. Continue working on Simulation workloads. It's plimitted at the moment. 
+  1. Continue working on workload profiles for new Intel SSDs. 
 
  MAINTAINERS
  -----------
