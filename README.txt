@@ -32,7 +32,7 @@
  ------------
  Requires:
 
-  FIO 2.15 or newer (2.1.x is no longer supported) http://freecode.com/projects/fio
+  FIO 2.15 or newer (2.1.x is no longer supported) https://github.com/axboe/fio/releases
   PyQtGraph http://www.pyqtgraph.org/
   Python 2.7 and 3+
   PyQt 4.8+ or PySide
