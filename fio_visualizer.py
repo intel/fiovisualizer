@@ -44,8 +44,11 @@ class dateAxis(pg.AxisItem):
 
 
 class uiMainWindow(object):
-    def select_jobfile(self):
-        jobfile = QtGui.QFileDialog.getOpenFileName()
+    def select_jobfile(self):        
+        if (QtCore.QT_VERSION_STR >= "5"):
+            jobfile = QtGui.QFileDialog.getOpenFileName()[0]
+        else:
+            jobfile = QtGui.QFileDialog.getOpenFileName()
         self.fio_jobfile_path.setText(jobfile)
         try:
             text = open('' + jobfile).read()
