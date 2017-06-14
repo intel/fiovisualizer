@@ -996,7 +996,7 @@ def find_numjobs():
         if reply == warningbox.No:
             return False
     else:
-        reply = msgBox.question(None, '',  "Starting '" + str(numjobs) + "' simultanious jobs")
+        reply = msgBox.question(None, '',  "Starting '" + str(numjobs) + "' simultaneous jobs")
 
 
 def parse_fio_output():
