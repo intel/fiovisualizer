@@ -47,7 +47,7 @@ setup(
         'Development Status :: 4 - Beta',
 
         # Indicate who your project is intended for
-        'Intended Audience :: Sience/Research',
+        'Intended Audience :: Science/Research',
         'Topic :: Scientific Engineering :: Information Analysis',
 
         # Pick your license as you wish (should match "license" above)

@@ -44,8 +44,11 @@ class dateAxis(pg.AxisItem):
 
 
 class uiMainWindow(object):
-    def select_jobfile(self):
-        jobfile = QtGui.QFileDialog.getOpenFileName()
+    def select_jobfile(self):        
+        if (QtCore.QT_VERSION_STR >= "5"):
+            jobfile = QtGui.QFileDialog.getOpenFileName()[0]
+        else:
+            jobfile = QtGui.QFileDialog.getOpenFileName()
         self.fio_jobfile_path.setText(jobfile)
         try:
             text = open('' + jobfile).read()
@@ -993,7 +996,7 @@ def find_numjobs():
         if reply == warningbox.No:
             return False
     else:
-        reply = msgBox.question(None, '',  "Starting '" + str(numjobs) + "' simultanious jobs")
+        reply = msgBox.question(None, '',  "Starting '" + str(numjobs) + "' simultaneous jobs")
 
 
 def parse_fio_output():
