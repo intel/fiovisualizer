@@ -96,51 +96,51 @@ class uiMainWindow(object):
         MainWindow.resize(self.WIN_HEIGHT, self.WIN_WIDTH)
         self.reset_window(MainWindow)
         palette = QtGui.QPalette()
-        set_brush(0, 0, 0, QtGui.QPalette.WindowText, palette, QtGui.QPalette.Active)
-        set_brush(227, 227, 227,QtGui.QPalette.Button, palette, QtGui.QPalette.Active)
-        set_brush(255, 255, 255,QtGui.QPalette.Light, palette, QtGui.QPalette.Active)
-        set_brush(241, 241, 241,QtGui.QPalette.Midlight, palette, QtGui.QPalette.Active)
-        set_brush(113, 113, 113,QtGui.QPalette.Dark, palette, QtGui.QPalette.Active)
-        set_brush(151, 151, 151,QtGui.QPalette.Mid, palette, QtGui.QPalette.Active)
-        set_brush(0, 0, 0,QtGui.QPalette.Text, palette, QtGui.QPalette.Active)
-        set_brush(255, 255, 255,QtGui.QPalette.BrightText, palette, QtGui.QPalette.Active)
-        set_brush(0, 0, 0,QtGui.QPalette.ButtonText, palette, QtGui.QPalette.Active)
-        set_brush(255, 255, 255,QtGui.QPalette.Base, palette, QtGui.QPalette.Active)
-        set_brush(227, 227, 227,QtGui.QPalette.Window, palette, QtGui.QPalette.Active)
-        set_brush(0, 0, 0,QtGui.QPalette.Shadow, palette, QtGui.QPalette.Active)
-        set_brush(241, 241, 241,QtGui.QPalette.AlternateBase, palette, QtGui.QPalette.Active)
-        set_brush(255, 255, 220,QtGui.QPalette.ToolTipBase, palette, QtGui.QPalette.Active)
-        set_brush(0, 0, 0,QtGui.QPalette.ToolTipText, palette, QtGui.QPalette.Active)
-        set_brush(0, 0, 0,QtGui.QPalette.WindowText, palette, QtGui.QPalette.Inactive)
-        set_brush(227, 227, 227,QtGui.QPalette.Button, palette, QtGui.QPalette.Inactive)
-        set_brush(255, 255, 255,QtGui.QPalette.Light, palette, QtGui.QPalette.Inactive)
-        set_brush(241, 241, 241,QtGui.QPalette.Midlight, palette, QtGui.QPalette.Inactive)
-        set_brush(113, 113, 113,QtGui.QPalette.Dark, palette, QtGui.QPalette.Inactive)
-        set_brush(151, 151, 151,QtGui.QPalette.Mid, palette, QtGui.QPalette.Inactive)
-        set_brush(0, 0, 0,QtGui.QPalette.Text, palette, QtGui.QPalette.Inactive)
-        set_brush(255, 255, 255,QtGui.QPalette.BrightText, palette, QtGui.QPalette.Inactive)
-        set_brush(0, 0, 0,QtGui.QPalette.ButtonText, palette, QtGui.QPalette.Inactive)
-        set_brush(255, 255, 255,QtGui.QPalette.Base, palette, QtGui.QPalette.Inactive)
-        set_brush(227, 227, 227,QtGui.QPalette.Window, palette, QtGui.QPalette.Inactive)
-        set_brush(0, 0, 0,QtGui.QPalette.Shadow, palette, QtGui.QPalette.Inactive)
-        set_brush(241, 241, 241,QtGui.QPalette.AlternateBase, palette, QtGui.QPalette.Inactive)
-        set_brush(255, 255, 220,QtGui.QPalette.ToolTipBase, palette, QtGui.QPalette.Inactive)
-        set_brush(0, 0, 0,QtGui.QPalette.ToolTipText, palette, QtGui.QPalette.Inactive)
-        set_brush(113, 113, 113,QtGui.QPalette.WindowText, palette, QtGui.QPalette.Disabled)
-        set_brush(227, 227, 227,QtGui.QPalette.Button, palette, QtGui.QPalette.Disabled)
-        set_brush(255, 255, 255,QtGui.QPalette.Light, palette, QtGui.QPalette.Disabled)
-        set_brush(241, 241, 241,QtGui.QPalette.Midlight, palette, QtGui.QPalette.Disabled)
-        set_brush(113, 113, 113,QtGui.QPalette.Dark, palette, QtGui.QPalette.Disabled)
-        set_brush(151, 151, 151,QtGui.QPalette.Mid, palette, QtGui.QPalette.Disabled)
-        set_brush(113, 113, 113,QtGui.QPalette.Text, palette, QtGui.QPalette.Disabled)
-        set_brush(255, 255, 255,QtGui.QPalette.BrightText, palette, QtGui.QPalette.Disabled)
-        set_brush(113, 113, 113,QtGui.QPalette.ButtonText, palette, QtGui.QPalette.Disabled)
-        set_brush(227, 227, 227,QtGui.QPalette.Base, palette, QtGui.QPalette.Disabled)
-        set_brush(227, 227, 227,QtGui.QPalette.Window, palette, QtGui.QPalette.Disabled)
-        set_brush(0, 0, 0,QtGui.QPalette.Shadow, palette, QtGui.QPalette.Disabled)
-        set_brush(227, 227, 227,QtGui.QPalette.AlternateBase, palette, QtGui.QPalette.Disabled)
-        set_brush(255, 255, 220,QtGui.QPalette.ToolTipBase, palette, QtGui.QPalette.Disabled)
-        set_brush(0, 0, 0,QtGui.QPalette.ToolTipText, palette, QtGui.QPalette.Disabled)
+        self.set_brush(0, 0, 0, QtGui.QPalette.WindowText, palette, QtGui.QPalette.Active)
+        self.set_brush(227, 227, 227,QtGui.QPalette.Button, palette, QtGui.QPalette.Active)
+        self.set_brush(255, 255, 255,QtGui.QPalette.Light, palette, QtGui.QPalette.Active)
+        self.set_brush(241, 241, 241,QtGui.QPalette.Midlight, palette, QtGui.QPalette.Active)
+        self.set_brush(113, 113, 113,QtGui.QPalette.Dark, palette, QtGui.QPalette.Active)
+        self.set_brush(151, 151, 151,QtGui.QPalette.Mid, palette, QtGui.QPalette.Active)
+        self.set_brush(0, 0, 0,QtGui.QPalette.Text, palette, QtGui.QPalette.Active)
+        self.set_brush(255, 255, 255,QtGui.QPalette.BrightText, palette, QtGui.QPalette.Active)
+        self.set_brush(0, 0, 0,QtGui.QPalette.ButtonText, palette, QtGui.QPalette.Active)
+        self.set_brush(255, 255, 255,QtGui.QPalette.Base, palette, QtGui.QPalette.Active)
+        self.set_brush(227, 227, 227,QtGui.QPalette.Window, palette, QtGui.QPalette.Active)
+        self.set_brush(0, 0, 0,QtGui.QPalette.Shadow, palette, QtGui.QPalette.Active)
+        self.set_brush(241, 241, 241,QtGui.QPalette.AlternateBase, palette, QtGui.QPalette.Active)
+        self.set_brush(255, 255, 220,QtGui.QPalette.ToolTipBase, palette, QtGui.QPalette.Active)
+        self.set_brush(0, 0, 0,QtGui.QPalette.ToolTipText, palette, QtGui.QPalette.Active)
+        self.set_brush(0, 0, 0,QtGui.QPalette.WindowText, palette, QtGui.QPalette.Inactive)
+        self.set_brush(227, 227, 227,QtGui.QPalette.Button, palette, QtGui.QPalette.Inactive)
+        self.set_brush(255, 255, 255,QtGui.QPalette.Light, palette, QtGui.QPalette.Inactive)
+        self.set_brush(241, 241, 241,QtGui.QPalette.Midlight, palette, QtGui.QPalette.Inactive)
+        self.set_brush(113, 113, 113,QtGui.QPalette.Dark, palette, QtGui.QPalette.Inactive)
+        self.set_brush(151, 151, 151,QtGui.QPalette.Mid, palette, QtGui.QPalette.Inactive)
+        self.set_brush(0, 0, 0,QtGui.QPalette.Text, palette, QtGui.QPalette.Inactive)
+        self.set_brush(255, 255, 255,QtGui.QPalette.BrightText, palette, QtGui.QPalette.Inactive)
+        self.set_brush(0, 0, 0,QtGui.QPalette.ButtonText, palette, QtGui.QPalette.Inactive)
+        self.set_brush(255, 255, 255,QtGui.QPalette.Base, palette, QtGui.QPalette.Inactive)
+        self.set_brush(227, 227, 227,QtGui.QPalette.Window, palette, QtGui.QPalette.Inactive)
+        self.set_brush(0, 0, 0,QtGui.QPalette.Shadow, palette, QtGui.QPalette.Inactive)
+        self.set_brush(241, 241, 241,QtGui.QPalette.AlternateBase, palette, QtGui.QPalette.Inactive)
+        self.set_brush(255, 255, 220,QtGui.QPalette.ToolTipBase, palette, QtGui.QPalette.Inactive)
+        self.set_brush(0, 0, 0,QtGui.QPalette.ToolTipText, palette, QtGui.QPalette.Inactive)
+        self.set_brush(113, 113, 113,QtGui.QPalette.WindowText, palette, QtGui.QPalette.Disabled)
+        self.set_brush(227, 227, 227,QtGui.QPalette.Button, palette, QtGui.QPalette.Disabled)
+        self.set_brush(255, 255, 255,QtGui.QPalette.Light, palette, QtGui.QPalette.Disabled)
+        self.set_brush(241, 241, 241,QtGui.QPalette.Midlight, palette, QtGui.QPalette.Disabled)
+        self.set_brush(113, 113, 113,QtGui.QPalette.Dark, palette, QtGui.QPalette.Disabled)
+        self.set_brush(151, 151, 151,QtGui.QPalette.Mid, palette, QtGui.QPalette.Disabled)
+        self.set_brush(113, 113, 113,QtGui.QPalette.Text, palette, QtGui.QPalette.Disabled)
+        self.set_brush(255, 255, 255,QtGui.QPalette.BrightText, palette, QtGui.QPalette.Disabled)
+        self.set_brush(113, 113, 113,QtGui.QPalette.ButtonText, palette, QtGui.QPalette.Disabled)
+        self.set_brush(227, 227, 227,QtGui.QPalette.Base, palette, QtGui.QPalette.Disabled)
+        self.set_brush(227, 227, 227,QtGui.QPalette.Window, palette, QtGui.QPalette.Disabled)
+        self.set_brush(0, 0, 0,QtGui.QPalette.Shadow, palette, QtGui.QPalette.Disabled)
+        self.set_brush(227, 227, 227,QtGui.QPalette.AlternateBase, palette, QtGui.QPalette.Disabled)
+        self.set_brush(255, 255, 220,QtGui.QPalette.ToolTipBase, palette, QtGui.QPalette.Disabled)
+        self.set_brush(0, 0, 0,QtGui.QPalette.ToolTipText, palette, QtGui.QPalette.Disabled)
         MainWindow.setPalette(palette)
         MainWindow.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.centralWidget = QtGui.QWidget(MainWindow)
@@ -155,11 +155,11 @@ class uiMainWindow(object):
         self.splitter = QtGui.QSplitter(self.splitter_3)
         self.create_splitter(QtCore.Qt.Vertical, self.splitter, "splitter")
         self.read_iops_plot = pg.PlotWidget(self.splitter, axisItems={'left': y_axis_read_iops, 'bottom':x_ax_r_iops})
-        setup_plot(self.read_iops_plot, "read_iops_plot")
+        self.setup_plot(self.read_iops_plot, "read_iops_plot")
         self.read_bw_plot = pg.PlotWidget(self.splitter, axisItems={'left': y_axis_read_bw, 'bottom':x_ax_r_bw})
-        setup_plot(self.read_bw_plot, "read_bw_plot")
+        self.setup_plot(self.read_bw_plot, "read_bw_plot")
         self.read_lat_plot = pg.PlotWidget(self.splitter, axisItems={'left': y_axis_read_lat, 'bottom':x_ax_r_lat})
-        setup_plot(self.read_lat_plot, "read_lat_plot")
+        self.setup_plot(self.read_lat_plot, "read_lat_plot")
         self.splitter_2 = QtGui.QSplitter(self.splitter_3)
         self.splitter_2.setAccessibleName(_fromUtf8(""))
         self.splitter_2.setLineWidth(0)
@@ -167,11 +167,11 @@ class uiMainWindow(object):
         self.splitter_2.setHandleWidth(4)
         self.splitter_2.setObjectName(_fromUtf8("splitter_2"))
         self.write_iops_plot = pg.PlotWidget(self.splitter_2, axisItems={'left': y_axis_write_iops, 'bottom':x_ax_w_iops})
-        setup_plot(self.write_iops_plot, "write_iops_plot")
+        self.setup_plot(self.write_iops_plot, "write_iops_plot")
         self.write_bw_plot = pg.PlotWidget(self.splitter_2, axisItems={'left': y_axis_write_bw, 'bottom':x_ax_w_bw})
-        setup_plot(self.write_bw_plot, "write_bw_plot")
+        self.setup_plot(self.write_bw_plot, "write_bw_plot")
         self.write_lat_plot = pg.PlotWidget(self.splitter_2, axisItems={'left': y_axis_write_lat, 'bottom':x_ax_w_lat})
-        setup_plot(self.write_lat_plot, "write_lat_plot")
+        self.setup_plot(self.write_lat_plot, "write_lat_plot")
         self.gridLayout_8.addWidget(self.splitter_3, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralWidget)
         self.dockWidget = QtGui.QDockWidget(MainWindow)
@@ -362,6 +362,7 @@ class uiMainWindow(object):
         self.frame_4.setObjectName(_fromUtf8("frame_4"))
         self.gridLayout_12 = QtGui.QGridLayout(self.frame_4)
         self.gridLayout_12.setObjectName(_fromUtf8("gridLayout_12"))
+
         self.read_iops_checkbox = QtGui.QCheckBox(self.frame_4)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -378,6 +379,10 @@ class uiMainWindow(object):
         self.read_iops_checkbox.setTristate(False)
         self.read_iops_checkbox.setObjectName(_fromUtf8("read_iops_checkbox"))
         self.gridLayout_12.addWidget(self.read_iops_checkbox, 0, 0, 2, 1)
+        self.read_iops_total_checkbox = QtGui.QCheckBox(self.frame_4)
+        self.set_size_pol(self.read_iops_total_checkbox, "read_iops_total_checkbox", True, (0, 1, 1, 1), self.gridLayout_12, self.frame_4)
+        self.read_iops_threads_checkbox = QtGui.QCheckBox(self.frame_4)
+        self.set_size_pol(self.read_iops_threads_checkbox, "read_iops_threads_checkbox", False, (1, 1, 1, 1), self.gridLayout_12, self.frame_4)
         self.gridLayout_11.addWidget(self.frame_4, 0, 0, 1, 1)
         self.frame_5 = QtGui.QFrame(self.tab)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
@@ -391,13 +396,26 @@ class uiMainWindow(object):
         self.frame_5.setObjectName(_fromUtf8("frame_5"))
         self.gridLayout_13 = QtGui.QGridLayout(self.frame_5)
         self.gridLayout_13.setObjectName(_fromUtf8("gridLayout_13"))
+
         self.read_bw_checkbox = QtGui.QCheckBox(self.frame_5)
-        set_size_pol(self.read_bw_checkbox, "read_bw_checkbox", True, (0,0,2,1), self.gridLayout_13, self.frame_5)
+        self.set_size_pol(self.read_bw_checkbox, "read_bw_checkbox", True, (0,0,2,1), self.gridLayout_13, self.frame_5)
+
+        self.read_bw_total_checkbox = QtGui.QCheckBox(self.frame_5)
+        self.set_size_pol(self.read_bw_total_checkbox, "read_bw_total_checkbox", True, (0,1,1,1), self.gridLayout_13, self.frame_5)
+
+        self.read_bw_threads_checkbox = QtGui.QCheckBox(self.frame_5)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.read_bw_threads_checkbox.sizePolicy().hasHeightForWidth())
+        self.read_bw_threads_checkbox.setSizePolicy(sizePolicy)
+        self.read_bw_threads_checkbox.setMinimumSize(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setPointSize(9)
+        self.read_bw_threads_checkbox.setFont(font)
+        self.read_bw_threads_checkbox.setStyleSheet(_fromUtf8(""))
+        self.read_bw_threads_checkbox.setObjectName(_fromUtf8("read_bw_threads_checkbox"))
+        self.gridLayout_13.addWidget(self.read_bw_threads_checkbox, 1, 1, 1, 1)
         self.gridLayout_11.addWidget(self.frame_5, 1, 0, 1, 1)
         self.frame_9 = QtGui.QFrame(self.tab)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
@@ -412,9 +430,11 @@ class uiMainWindow(object):
         self.gridLayout_14 = QtGui.QGridLayout(self.frame_9)
         self.gridLayout_14.setObjectName(_fromUtf8("gridLayout_14"))
         self.read_lat_checkbox = QtGui.QCheckBox(self.frame_9)
-        set_size_pol(self.read_lat_checkbox, "read_lat_checkbox", True, (0,0,2,1), self.gridLayout_14, self.frame_9)
+        self.set_size_pol(self.read_lat_checkbox, "read_lat_checkbox", True, (0,0,2,1), self.gridLayout_14, self.frame_9)
         self.read_lat_max_checkbox = QtGui.QCheckBox(self.frame_9)
-        set_size_pol(self.read_lat_max_checkbox, "read_lat_peak_checkbox", False, (0,1,1,1), self.gridLayout_14, self.frame_9)
+        self.set_size_pol(self.read_lat_max_checkbox, "read_lat_max_checkbox", False, (0,1,1,1), self.gridLayout_14, self.frame_9)
+        self.read_lat_threads_checkbox = QtGui.QCheckBox(self.frame_9)
+        self.set_size_pol(self.read_lat_threads_checkbox, "read_lat_threads_checkbox", True, (1,1,1,1), self.gridLayout_14, self.frame_9)
         self.gridLayout_11.addWidget(self.frame_9, 2, 0, 1, 1)
         self.tabWidget.addTab(self.tab, _fromUtf8(""))
         self.tab_2 = QtGui.QWidget()
@@ -435,7 +455,11 @@ class uiMainWindow(object):
         self.gridLayout_10 = QtGui.QGridLayout(self.frame_6)
         self.gridLayout_10.setObjectName(_fromUtf8("gridLayout_10"))
         self.write_iops_checkbox = QtGui.QCheckBox(self.frame_6)
-        set_size_pol(self.write_iops_checkbox, "write_iops_checkbox", True, (0,0,2,1), self.gridLayout_10, self.frame_6)
+        self.set_size_pol(self.write_iops_checkbox, "write_iops_checkbox", True, (0,0,2,1), self.gridLayout_10, self.frame_6)
+        self.write_iops_total_checkbox = QtGui.QCheckBox(self.frame_6)
+        self.set_size_pol(self.write_iops_total_checkbox, "write_iops_total_checkbox", True, (0,1,1,1), self.gridLayout_10, self.frame_6)
+        self.write_iops_threads_checkbox = QtGui.QCheckBox(self.frame_6)
+        self.set_size_pol(self.write_iops_threads_checkbox, "write_iops_threads_checkbox", True, (1,1,1,1), self.gridLayout_10, self.frame_6)
         self.gridLayout.addWidget(self.frame_6, 0, 0, 1, 1)
         self.frame_7 = QtGui.QFrame(self.tab_2)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
@@ -451,7 +475,11 @@ class uiMainWindow(object):
         self.gridLayout_9 = QtGui.QGridLayout(self.frame_7)
         self.gridLayout_9.setObjectName(_fromUtf8("gridLayout_9"))
         self.write_bw_checkbox = QtGui.QCheckBox(self.frame_7)
-        set_size_pol(self.write_bw_checkbox, "write_bw_checkbox", True, (0,0,2,1), self.gridLayout_9, self.frame_7)
+        self.set_size_pol(self.write_bw_checkbox, "write_bw_checkbox", True, (0,0,2,1), self.gridLayout_9, self.frame_7)
+        self.write_bw_total_checkbox = QtGui.QCheckBox(self.frame_7)
+        self.set_size_pol(self.write_bw_total_checkbox, "write_bw_total_checkbox", True, (0,1,1,1), self.gridLayout_9, self.frame_7)
+        self.write_bw_threads_checkbox = QtGui.QCheckBox(self.frame_7)
+        self.set_size_pol(self.write_bw_threads_checkbox, "write_bw_threads_checkbox", True, (1,1,1,1), self.gridLayout_9, self.frame_7)
         self.gridLayout.addWidget(self.frame_7, 1, 0, 1, 1)
         self.frame_8 = QtGui.QFrame(self.tab_2)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
@@ -467,9 +495,11 @@ class uiMainWindow(object):
         self.gridLayout_4 = QtGui.QGridLayout(self.frame_8)
         self.gridLayout_4.setObjectName(_fromUtf8("gridLayout_4"))
         self.write_lat_checkbox = QtGui.QCheckBox(self.frame_8)
-        set_size_pol(self.write_lat_checkbox, "write_lat_checkbox", True, (0,0,2,1), self.gridLayout_4, self.frame_8)
+        self.set_size_pol(self.write_lat_checkbox, "write_lat_checkbox", True, (0,0,2,1), self.gridLayout_4, self.frame_8)
         self.write_lat_max_checkbox = QtGui.QCheckBox(self.frame_8)
-        set_size_pol(self.write_lat_max_checkbox, "write_lat_peak_checkbox", False, (0, 1, 1, 1), self.gridLayout_4, self.frame_8)
+        self.set_size_pol(self.write_lat_max_checkbox, "write_lat_max_checkbox", False, (0, 1, 1, 1), self.gridLayout_4, self.frame_8)
+        self.write_lat_threads_checkbox = QtGui.QCheckBox(self.frame_8)
+        self.set_size_pol(self.write_lat_threads_checkbox, "write_lat_threads_checkbox", True, (1,1,1,1), self.gridLayout_4, self.frame_8)
         self.gridLayout.addWidget(self.frame_8, 2, 0, 1, 1)
         self.tabWidget.addTab(self.tab_2, _fromUtf8(""))
         self.gridLayout_5.addWidget(self.tabWidget, 1, 0, 1, 2)
@@ -495,78 +525,150 @@ class uiMainWindow(object):
         self.stop_button.setText(_translate("MainWindow", "STOP", None))
         self.label_8.setText(_translate("MainWindow", "Jobfile:", None))
         self.browse_button.setText(_translate("MainWindow", "Browse", None))
-        set_check_text(self.read_iops_checkbox, self.read_bw_checkbox, self.read_lat_checkbox, self.read_lat_max_checkbox)
-        set_check_text(self.write_iops_checkbox, self.write_bw_checkbox, self.write_lat_checkbox, self.write_lat_max_checkbox)
+        set_check_text(self.read_iops_checkbox, self.read_iops_total_checkbox, self.read_iops_threads_checkbox, self.read_bw_checkbox, self.read_bw_total_checkbox, self.read_bw_threads_checkbox, self.read_lat_checkbox, self.read_lat_max_checkbox, self.read_lat_threads_checkbox)
+        set_check_text(self.write_iops_checkbox, self.write_iops_total_checkbox, self.write_iops_threads_checkbox, self.write_bw_checkbox, self.write_bw_total_checkbox, self.write_bw_threads_checkbox, self.write_lat_checkbox, self.write_lat_max_checkbox, self.write_lat_threads_checkbox)
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Read", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Write", None))
         self.actionSettings.setText(_translate("MainWindow", "Settings", None))
         self.actionPlot_Area.setText(_translate("MainWindow", "Plot Area", None))
 
-def set_check_text(iops, bw, lat, lat_max):
+    def set_size_pol(self, checkbox, name, checked, coord, grid, frame):
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(checkbox.sizePolicy().hasHeightForWidth())
+        checkbox.setSizePolicy(sizePolicy)
+        checkbox.setMinimumSize(QtCore.QSize(0, 0))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        checkbox.setFont(font)
+        checkbox.setAccessibleName(_fromUtf8(""))
+        checkbox.setStyleSheet(_fromUtf8(""))
+        checkbox.setChecked(checked)
+        checkbox.setObjectName(_fromUtf8(name))
+        grid.addWidget(checkbox, coord[0], coord[1], coord[2], coord[3])
+
+    def checkbox_handler(self, plot, total_checkbox, thread_checkbox, unit_checkbox):
+        checked = unit_checkbox.isChecked()
+        thread_checkbox.setEnabled(checked)
+        total_checkbox.setEnabled(checked)
+        if checked:
+            plot.show()
+        else:
+            plot.hide()
+
+    def set_brush(self, r,g,b,widget,palette,status):
+        brush = QtGui.QBrush(QtGui.QColor(r, g, b))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(status, widget, brush)
+
+    def setup_plot(self, plot, name):
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(plot.sizePolicy().hasHeightForWidth())
+        plot.setSizePolicy(sizePolicy)
+        plot.setMinimumSize(QtCore.QSize(0, 0))
+        plot.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        plot.setBaseSize(QtCore.QSize(0, 0))
+        plot.setAccessibleName(_fromUtf8(""))
+        plot.setInteractive(True)
+        plot.setObjectName(_fromUtf8(name))
+
+def set_y_ax(y_ax, label):
+    y_ax.setLabel(label)
+    y_ax.setStyle(autoExpandTextSpace=False)
+
+
+def set_check_text(iops, iops_tot, iops_threads, bw, bw_tot, bw_threads, lat, lat_max, lat_threads):
     iops.setText(_translate("MainWindow", "IOPS", None))
+    iops_tot.setText(_translate("MainWindow", "Total", None))
+    iops_threads.setText(_translate("MainWindow", "All", None))
     bw.setText(_translate("MainWindow", "BW", None))
+    bw_tot.setText(_translate("MainWindow", "Total", None))
+    bw_threads.setText(_translate("MainWindow", "All", None))
     lat.setText(_translate("MainWindow", "LAT", None))
     lat_max.setText(_translate("MainWindow", "Peak\n"
 "(max of\n"
 "clat_max)", None))
+    lat_threads.setText(_translate("MainWindow", "All clat_avg", None))
 
-def start_fio():
+def init_fio():
     global parsing_thread, fio_process, timer
+    numjobs = realtime_back.get_jobs(ui.fio_jobfile_path.text())
     read_iops_data = {
             'type':'r_iops',
             'all':[],
+            'job_vals':[[] for i in itertools.repeat(None, numjobs)],
             'plot':ui.read_iops_plot,
             'checkb':ui.read_iops_checkbox,
-            'color':'#00aeef'
-            }
-    write_iops_data = {
-            'type':'w_iops',
-            'all':[],
-            'plot':ui.write_iops_plot,
-            'checkb':ui.write_iops_checkbox,
-            'color':'#00aeef'
+            'thread_check':ui.read_iops_threads_checkbox,
+            'total_check':ui.read_iops_total_checkbox,
+            'colors':['#00aeef']
             }
     read_bw_data = {
             'type': 'r_bw',
             'all':[],
+            'job_vals':[[] for i in itertools.repeat(None, numjobs)],
             'plot':ui.read_bw_plot,
             'checkb':ui.read_bw_checkbox,
-            'color':'#fd9613'
-            }
-    write_bw_data = {
-            'type': 'w_bw',
-            'all':[],
-            'plot':ui.write_bw_plot,
-            'checkb':ui.write_bw_checkbox,
-            'color':'#fd9613'
+            'thread_check':ui.read_bw_threads_checkbox,
+            'total_check':ui.read_bw_total_checkbox,
+            'colors':['#fd9613']
             }
     read_lat_data = {
             'type': 'r_lat',
             'all':[],
-            'peak':[],
+            'job_vals':[[] for i in itertools.repeat(None, numjobs)],
             'plot':ui.read_lat_plot,
             'checkb':ui.read_lat_checkbox,
-            'peakb':ui.read_lat_max_checkbox,
-            'color':'#004280'
+            'thread_check':ui.read_lat_threads_checkbox,
+            'total_check':ui.read_lat_max_checkbox,
+            'colors':['#004280']
+            }
+    write_iops_data = {
+            'type':'w_iops',
+            'all':[],
+            'job_vals':[[] for i in itertools.repeat(None, numjobs)],
+            'plot':ui.write_iops_plot,
+            'checkb':ui.write_iops_checkbox,
+            'thread_check':ui.write_iops_threads_checkbox,
+            'total_check':ui.write_iops_total_checkbox,
+            'colors':['#00aeef']
+            }
+    write_bw_data = {
+            'type': 'w_bw',
+            'all':[],
+            'job_vals':[[] for i in itertools.repeat(None, numjobs)],
+            'plot':ui.write_bw_plot,
+            'checkb':ui.write_bw_checkbox,
+            'thread_check':ui.write_bw_threads_checkbox,
+            'total_check':ui.write_bw_total_checkbox,
+            'colors':['#fd9613']
             }
     write_lat_data = {
             'type': 'w_lat',
             'all':[],
-            'peak':[],
+            'job_vals':[[] for i in itertools.repeat(None, numjobs)],
             'plot':ui.write_lat_plot,
             'checkb':ui.write_lat_checkbox,
-            'peakb':ui.write_lat_max_checkbox,
-            'color':'#004280'
+            'thread_check':ui.write_lat_threads_checkbox,
+            'total_check':ui.write_lat_max_checkbox,
+            'colors':['#004280']
             }
 
-    fio_all_data = [read_iops_data, write_iops_data, read_bw_data, write_bw_data, read_lat_data, write_lat_data]
-    args = realtime_back.make_cmd(str(ui.fio_jobfile_path.text()))
+    fio_all_data = [read_iops_data, read_bw_data, read_lat_data, write_iops_data, write_bw_data, write_lat_data]
+
+    for entry in fio_all_data:
+        for i in range(1, (len(entry['job_vals']))):
+            entry['colors'].append(format(int(entry['colors'][0][1:],16) + (i * 2000), '06X'))
+        print(entry['colors'])
+        
     exit_code = [None]
-    fio_process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, preexec_fn=os.setpgrp)
-    parsing_thread = threading.Thread(target=lambda: realtime_back.parse_fio_output(fio_all_data[0]['all'], fio_all_data[2]['all'], fio_all_data[1]['all'], fio_all_data[3]['all'], fio_all_data[4]['all'], fio_all_data[4]['peak'], fio_all_data[5]['all'], fio_all_data[5]['peak'], fio_process, exit_code), args=())
+    parsing_thread = realtime_back.start_fio(ui.fio_jobfile_path.text(), fio_all_data)
     parsing_thread.start()
     timer = QtCore.QTimer()
-    timer.timeout.connect(lambda: update(fio_all_data, parsing_thread, exit_code[0]))
+    timer.timeout.connect(lambda: update(fio_all_data, parsing_thread, exit_code[0], timer))
     timer.start(1000)
 
 def kill_fio():
@@ -580,18 +682,29 @@ def is_lat(entry):
     dtype = entry['type']
     return (dtype == 'w_lat' or dtype == 'r_lat')
 
-def update(fio_data, parsing_thread, exit_code):
-    global timer
+def update(fio_data, parsing_thread, exit_code, timer):
     if parsing_thread.isAlive():
         for entry in fio_data:
+            try:
+                print(entry['type'] + str(entry['all'][-1]))
+            except Exception:
+                pass
             if entry['checkb'].isChecked() and not is_lat(entry):
                 entry['plot'].clear()
-                entry['plot'].plot(pen=entry['color']).setData(entry['all'])
+
+                if entry['thread_check'].isChecked():
+                    for i in range(0, len(entry['job_vals'])):
+                        entry['plot'].plot(pen=entry['colors'][i]).setData(entry['job_vals'][i])
+
+                if entry['total_check'].isChecked():
+                    entry['plot'].plot(pen=entry['colors'][0]).setData(entry['all'])
+
             elif entry['checkb'].isChecked():
                 entry['plot'].clear()
-                entry['plot'].plot(pen=entry['color']).setData(entry['all'])
-                if entry['peakb'].isChecked():
-                    entry['plot'].plot(pen=entry['color']).setData(entry['peak'])
+                if entry['total_check'].isChecked():
+                    entry['plot'].plot(pen=entry['colors'][0]).setData(entry['all'])
+                if entry['thread_check'].isChecked():
+                    entry['plot'].plot(pen=entry['colors'][0]).setData(entry['all'])
 
     else:
         msg = QtGui.QMessageBox()
@@ -604,50 +717,6 @@ def update(fio_data, parsing_thread, exit_code):
             msg.about(msg, 'Informational', 'FIO was terminated with exit code: '+str(exit_code)+'\n\nSTDERR :'+str(fio_process_error))
         timer.stop()
 
-def set_size_pol(checkbox, name, checked, coord, grid, frame):
-    sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
-    sizePolicy.setHorizontalStretch(0)
-    sizePolicy.setVerticalStretch(0)
-    sizePolicy.setHeightForWidth(checkbox.sizePolicy().hasHeightForWidth())
-    checkbox.setSizePolicy(sizePolicy)
-    checkbox.setMinimumSize(QtCore.QSize(0, 0))
-    font = QtGui.QFont()
-    font.setPointSize(9)
-    checkbox.setFont(font)
-    checkbox.setAccessibleName(_fromUtf8(""))
-    checkbox.setStyleSheet(_fromUtf8(""))
-    checkbox.setChecked(checked)
-    checkbox.setObjectName(_fromUtf8(name))
-    grid.addWidget(checkbox, coord[0], coord[1], coord[2], coord[3])
-
-def checkbox_handler(plot, unit_checkbox):
-    checked = unit_checkbox.isChecked()
-    if checked:
-        plot.show()
-    else:
-        plot.hide()
-
-def set_brush(r,g,b,widget,palette,status):
-    brush = QtGui.QBrush(QtGui.QColor(r, g, b))
-    brush.setStyle(QtCore.Qt.SolidPattern)
-    palette.setBrush(status, widget, brush)
-
-def setup_plot(plot, name):
-    sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
-    sizePolicy.setHorizontalStretch(0)
-    sizePolicy.setVerticalStretch(0)
-    sizePolicy.setHeightForWidth(plot.sizePolicy().hasHeightForWidth())
-    plot.setSizePolicy(sizePolicy)
-    plot.setMinimumSize(QtCore.QSize(0, 0))
-    plot.setMaximumSize(QtCore.QSize(16777215, 16777215))
-    plot.setBaseSize(QtCore.QSize(0, 0))
-    plot.setAccessibleName(_fromUtf8(""))
-    plot.setInteractive(True)
-    plot.setObjectName(_fromUtf8(name))
-
-def set_y_ax(y_ax, label):
-    y_ax.setLabel(label)
-    y_ax.setStyle(autoExpandTextSpace=False)
 
 application = QtGui.QApplication([])
 pg.setConfigOptions(antialias=True)
@@ -657,13 +726,13 @@ window = QtGui.QMainWindow()
 ui = uiMainWindow()
 ui.setup_ui(window)
 window.show()
-ui.read_iops_checkbox.stateChanged.connect(lambda: checkbox_handler(ui.read_iops_plot, ui.read_iops_checkbox))
-ui.write_iops_checkbox.stateChanged.connect(lambda: checkbox_handler(ui.write_iops_plot, ui.write_iops_checkbox))
-ui.read_bw_checkbox.stateChanged.connect(lambda: checkbox_handler(ui.read_bw_plot, ui.read_bw_checkbox))
-ui.write_bw_checkbox.stateChanged.connect(lambda: checkbox_handler(ui.write_bw_plot, ui.write_bw_checkbox))
-ui.read_lat_checkbox.stateChanged.connect(lambda: checkbox_handler(ui.read_lat_plot, ui.read_lat_checkbox))
-ui.write_lat_checkbox.stateChanged.connect(lambda: checkbox_handler(ui.write_lat_plot, ui.write_lat_checkbox))
-ui.start_button.clicked.connect(start_fio)
+ui.read_iops_checkbox.stateChanged.connect(lambda: ui.checkbox_handler(ui.read_iops_plot, ui.read_iops_total_checkbox, ui.read_iops_threads_checkbox, ui.read_iops_checkbox))
+ui.write_iops_checkbox.stateChanged.connect(lambda: ui.checkbox_handler(ui.write_iops_plot, ui.write_iops_total_checkbox, ui.write_iops_threads_checkbox, ui.write_iops_checkbox))
+ui.read_bw_checkbox.stateChanged.connect(lambda: ui.checkbox_handler(ui.read_bw_plot, ui.read_bw_total_checkbox, ui.read_bw_threads_checkbox, ui.read_bw_checkbox))
+ui.write_bw_checkbox.stateChanged.connect(lambda: ui.checkbox_handler(ui.write_bw_plot, ui.write_bw_total_checkbox, ui.write_bw_threads_checkbox, ui.write_bw_checkbox))
+ui.read_lat_checkbox.stateChanged.connect(lambda: ui.checkbox_handler(ui.read_lat_plot, ui.read_lat_max_checkbox, ui.read_lat_threads_checkbox, ui.read_lat_checkbox))
+ui.write_lat_checkbox.stateChanged.connect(lambda: ui.checkbox_handler(ui.write_lat_plot, ui.write_lat_max_checkbox, ui.write_lat_threads_checkbox, ui.write_lat_checkbox))
+ui.start_button.clicked.connect(init_fio)
 ui.stop_button.clicked.connect(kill_fio)
 QtGui.QApplication.instance().exec_()
 
