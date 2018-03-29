@@ -1,6 +1,6 @@
 ## Description
 
-This tool is a realtime data visualisation tool for [FIO] (http://freecode.com/projects/fio) written using [PyQtGraph] (http://www.pyqtgraph.org).
+This tool is a realtime data visualisation tool for [FIO](http://freecode.com/projects/fio) written using [PyQtGraph](http://www.pyqtgraph.org).
 
 ## Overview
 
@@ -30,8 +30,8 @@ Workloads:
 ## Installation
 Requires:
 
-   - FIO 2.15 or newer (2.1.x is no longer supported) found [here] (https://github.com/axboe/fio/releases)
-   - PyQtGraph found [here] (http://www.pyqtgraph.org/)
+   - FIO 2.15 or newer (2.1.x is no longer supported) found [here](https://github.com/axboe/fio/releases)
+   - PyQtGraph found [here](http://www.pyqtgraph.org/)
    - Python 2.7 and 3+
    - PyQt 4.8+ or PySide
    - numpy
@@ -41,17 +41,17 @@ Requires:
 
 0. You should have python and PyQt installed with this distro
 
-1. Install pyqtgraph-develop (0.9.9 required) form [here] (http://www.pyqtgraph.org)
+1. Install pyqtgraph-develop (0.9.9 required) form [here](http://www.pyqtgraph.org)
    - `$ python setup.py install`
 
-2. Install Cyphon from [here] (http://cython.org) Version 0.21 or higher is required.
+2. Install Cyphon from [here](http://cython.org) Version 0.21 or higher is required.
    - `$ python setup.py install`
 
-3. Install Numpy from [here] (http://numpy.org)
+3. Install Numpy from [here](http://numpy.org)
    - `$ python setup.py build`
    - `$ python setup.py install`
 
-4. Install FIO from [here] (http://freecode.com/projects/fio)
+4. Install FIO from [here](http://freecode.com/projects/fio)
    - `# ./configure`
    - `# make`
    - `# make install`
@@ -64,7 +64,7 @@ Requires:
 
 1. Add the following repository `deb http://luke.campagnola.me/debian dev/` into your `/etc/apt/sources.list` and then run `$ sudo apt-get install fio python-pyqtgraph`
 
-2. Install FIO from [here] (http://freecode.com/projects/fio)
+2. Install FIO from [here](http://freecode.com/projects/fio)
    - `# ./configure`
    - `# make`
    - `# make install`
