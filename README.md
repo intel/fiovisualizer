@@ -1,8 +1,6 @@
-# FIO visualizer 1.1 13 Jan 2017
-
 ## Description
 
-This tool is a data visualisation tool for [FIO] (http://freecode.com/projects/fio) written using [PyQtGraph] (http://www.pyqtgraph.org).
+This tool is a realtime data visualisation tool for [FIO] (http://freecode.com/projects/fio) written using [PyQtGraph] (http://www.pyqtgraph.org).
 
 ## Overview
 
@@ -10,15 +8,15 @@ This application is written in Python, using PyQtGraph to graph FIO data in real
 
 ## Package Content
 README.md
-    This readme file
+  - This readme file
 LICENSE.txt
-    License file   	
+  - License file   	
 fio_visualizer.py
-    The frontend for this application
+  - The frontend for this application
 realtime_back.py
-    The backend for this application
+  - The backend for this application
 mainwindow.ui 
-    GUI definition part of the script
+  - GUI definition part of the script
 Workloads:
   - Device
      Block device workloads covering typical specifications, separated in SATA and NVMe sections
@@ -83,5 +81,5 @@ Requires:
 Continue working on workload profiles for new Intel SSDs. 
 
 ## Maintainers
-Andrey Kudryavtsev andrey.o.kudryavtsev@intel.com
-Alexey Ponomarev alexey.ponomarev@intel.com
+   - Andrey Kudryavtsev andrey.o.kudryavtsev@intel.com
+   - Alexey Ponomarev alexey.ponomarev@intel.com
