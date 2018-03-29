@@ -80,17 +80,17 @@ class uiMainWindow(object):
 
     def setup_ui(self, MainWindow):
         y_axis_read_iops=pg.AxisItem(orientation='left', showValues=True)
-        set_y_ax(y_axis_read_iops,'Read IOPs (IOP/s)<br><br>')
+        self.set_y_ax(y_axis_read_iops,'Read IOPs (IOP/s)<br><br>')
         y_axis_write_iops=pg.AxisItem(orientation='left')
-        set_y_ax(y_axis_write_iops, '<br>Write IOPs (IOP/s)<br><br>')
+        self.set_y_ax(y_axis_write_iops, '<br>Write IOPs (IOP/s)<br><br>')
         y_axis_read_bw=pg.AxisItem(orientation='left')
-        set_y_ax(y_axis_read_bw, 'Read BW (autoscale)<br><br>')
+        self.set_y_ax(y_axis_read_bw, 'Read BW (autoscale)<br><br>')
         y_axis_write_bw=pg.AxisItem(orientation='left')
-        set_y_ax(y_axis_write_bw, '<br>Write BW (autoscale)<br><br>')
+        self.set_y_ax(y_axis_write_bw, '<br>Write BW (autoscale)<br><br>')
         y_axis_read_lat=pg.AxisItem(orientation='left')
-        set_y_ax(y_axis_read_lat, 'Read latency (ms)<br><br>')
+        self.set_y_ax(y_axis_read_lat, 'Read latency (ms)<br><br>')
         y_axis_write_lat=pg.AxisItem(orientation='left')
-        set_y_ax(y_axis_write_lat, '<br>Write latency (ms)<br><br>')
+        self.set_y_ax(y_axis_write_lat, '<br>Write latency (ms)<br><br>')
         x_ax_r_iops, x_ax_w_iops, x_ax_r_bw, x_ax_w_bw, x_ax_r_lat, x_ax_w_lat = dateAxis(orientation='bottom'), dateAxis(orientation='bottom'), dateAxis(orientation='bottom'), dateAxis(orientation='bottom'), dateAxis(orientation='bottom'), dateAxis(orientation='bottom')
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
         MainWindow.resize(self.WIN_HEIGHT, self.WIN_WIDTH)
@@ -175,6 +175,7 @@ class uiMainWindow(object):
         self.gridLayout_8.addWidget(self.splitter_3, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralWidget)
         self.dockWidget = QtGui.QDockWidget(MainWindow)
+
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -234,10 +235,10 @@ class uiMainWindow(object):
         self.stop_button.setStyleSheet(_fromUtf8(""))
         self.stop_button.setObjectName(_fromUtf8("stop_button"))
         self.gridLayout_2.addWidget(self.stop_button, 1, 0, 1, 1)
-        self.gridLayout_5.addWidget(self.frame_11, 2, 0, 1, 2)
         self.frame = QtGui.QFrame(self.frame_10)
         self.set_size(self.frame)
 
+        self.gridLayout_5.addWidget(self.frame_11, 2, 0, 1, 2)
         self.frame.setAccessibleName(_fromUtf8(""))
         self.frame.setFrameShape(QtGui.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtGui.QFrame.Raised)
@@ -276,8 +277,6 @@ class uiMainWindow(object):
         self.fio_jobfile_contents.setObjectName(_fromUtf8("fio_jobfile_contents"))
         self.gridLayout_7.addWidget(self.fio_jobfile_contents, 2, 0, 1, 2)
 
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         font = QtGui.QFont()
         font.setPointSize(9)
@@ -298,8 +297,8 @@ class uiMainWindow(object):
         self.browse_button.setObjectName(_fromUtf8("browse_button"))
         self.gridLayout_7.addWidget(self.browse_button, 1, 1, 1, 1)
         self.gridLayout_5.addWidget(self.frame, 0, 0, 1, 2)
-        self.tabWidget = QtGui.QTabWidget(self.frame_10)
 
+        self.tabWidget = QtGui.QTabWidget(self.frame_10)
         self.set_size(self.tabWidget)
         self.tabWidget.setAccessibleName(_fromUtf8(""))
         self.tabWidget.setUsesScrollButtons(True)
@@ -311,8 +310,8 @@ class uiMainWindow(object):
         self.tab.setObjectName(_fromUtf8("tab"))
         self.gridLayout_11 = QtGui.QGridLayout(self.tab)
         self.gridLayout_11.setObjectName(_fromUtf8("gridLayout_11"))
-        self.frame_4 = QtGui.QFrame(self.tab)
 
+        self.frame_4 = QtGui.QFrame(self.tab)
         self.set_size(self.frame_4)
         self.frame_4.setFrameShape(QtGui.QFrame.Box)
         self.frame_4.setFrameShadow(QtGui.QFrame.Plain)
@@ -320,8 +319,8 @@ class uiMainWindow(object):
         self.gridLayout_12 = QtGui.QGridLayout(self.frame_4)
         self.gridLayout_12.setObjectName(_fromUtf8("gridLayout_12"))
         self.read_iops_checkbox = QtGui.QCheckBox(self.frame_4)
-
         self.set_size(self.read_iops_checkbox)
+
         font = QtGui.QFont()
         font.setPointSize(9)
         self.read_iops_checkbox.setFont(font)
@@ -336,8 +335,8 @@ class uiMainWindow(object):
         self.read_iops_threads_checkbox = QtGui.QCheckBox(self.frame_4)
         self.set_size_pol(self.read_iops_threads_checkbox, "read_iops_threads_checkbox", False, (1, 1, 1, 1), self.gridLayout_12, self.frame_4)
         self.gridLayout_11.addWidget(self.frame_4, 0, 0, 1, 1)
-        self.frame_5 = QtGui.QFrame(self.tab)
 
+        self.frame_5 = QtGui.QFrame(self.tab)
         self.set_size(self.frame_5)
         self.frame_5.setFrameShape(QtGui.QFrame.Box)
         self.frame_5.setFrameShadow(QtGui.QFrame.Plain)
@@ -359,7 +358,6 @@ class uiMainWindow(object):
         self.gridLayout_13.addWidget(self.read_bw_threads_checkbox, 1, 1, 1, 1)
         self.gridLayout_11.addWidget(self.frame_5, 1, 0, 1, 1)
         self.frame_9 = QtGui.QFrame(self.tab)
-
         self.set_size(self.frame_9)
         self.frame_9.setFrameShape(QtGui.QFrame.Box)
         self.frame_9.setFrameShadow(QtGui.QFrame.Plain)
@@ -458,8 +456,8 @@ class uiMainWindow(object):
         self.stop_button.setText(_translate("MainWindow", "STOP", None))
         self.label_8.setText(_translate("MainWindow", "Jobfile:", None))
         self.browse_button.setText(_translate("MainWindow", "Browse", None))
-        set_check_text(self.read_iops_checkbox, self.read_iops_total_checkbox, self.read_iops_threads_checkbox, self.read_bw_checkbox, self.read_bw_total_checkbox, self.read_bw_threads_checkbox, self.read_lat_checkbox, self.read_lat_max_checkbox, self.read_lat_threads_checkbox)
-        set_check_text(self.write_iops_checkbox, self.write_iops_total_checkbox, self.write_iops_threads_checkbox, self.write_bw_checkbox, self.write_bw_total_checkbox, self.write_bw_threads_checkbox, self.write_lat_checkbox, self.write_lat_max_checkbox, self.write_lat_threads_checkbox)
+        self.set_check_text(self.read_iops_checkbox, self.read_iops_total_checkbox, self.read_iops_threads_checkbox, self.read_bw_checkbox, self.read_bw_total_checkbox, self.read_bw_threads_checkbox, self.read_lat_checkbox, self.read_lat_max_checkbox, self.read_lat_threads_checkbox)
+        self.set_check_text(self.write_iops_checkbox, self.write_iops_total_checkbox, self.write_iops_threads_checkbox, self.write_bw_checkbox, self.write_bw_total_checkbox, self.write_bw_threads_checkbox, self.write_lat_checkbox, self.write_lat_max_checkbox, self.write_lat_threads_checkbox)
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Read", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Write", None))
         self.actionSettings.setText(_translate("MainWindow", "Settings", None))
@@ -508,23 +506,21 @@ class uiMainWindow(object):
         plot.setInteractive(True)
         plot.setObjectName(_fromUtf8(name))
 
-def set_y_ax(y_ax, label):
-    y_ax.setLabel(label)
-    y_ax.setStyle(autoExpandTextSpace=False)
+    def set_y_ax(self, y_ax, label):
+        y_ax.setLabel(label)
+        y_ax.setStyle(autoExpandTextSpace=False)
 
 
-def set_check_text(iops, iops_tot, iops_threads, bw, bw_tot, bw_threads, lat, lat_max, lat_threads):
-    iops.setText(_translate("MainWindow", "IOPS", None))
-    iops_tot.setText(_translate("MainWindow", "Total", None))
-    iops_threads.setText(_translate("MainWindow", "Threads", None))
-    bw.setText(_translate("MainWindow", "BW", None))
-    bw_tot.setText(_translate("MainWindow", "Total", None))
-    bw_threads.setText(_translate("MainWindow", "Threads", None))
-    lat.setText(_translate("MainWindow", "LAT", None))
-    lat_max.setText(_translate("MainWindow", "Peak\n"
-"(max of\n"
-"clat_max)", None))
-    lat_threads.setText(_translate("MainWindow", "Threads clat_avg", None))
+    def set_check_text(self, iops, iops_tot, iops_threads, bw, bw_tot, bw_threads, lat, lat_max, lat_threads):
+        iops.setText(_translate("MainWindow", "IOPS", None))
+        iops_tot.setText(_translate("MainWindow", "Total", None))
+        iops_threads.setText(_translate("MainWindow", "Threads", None))
+        bw.setText(_translate("MainWindow", "BW", None))
+        bw_tot.setText(_translate("MainWindow", "Total", None))
+        bw_threads.setText(_translate("MainWindow", "Threads", None))
+        lat.setText(_translate("MainWindow", "LAT", None))
+        lat_max.setText(_translate("MainWindow", "Peak\n(max of\nclat_max)", None))
+        lat_threads.setText(_translate("MainWindow", "Threads clat_avg", None))
 
 def init_fio():
     global parsing_thread, fio_process, timer

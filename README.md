@@ -1,7 +1,7 @@
- FIO visualizer 1.1 13 Jan 2017
+#FIO visualizer 1.1 13 Jan 2017
 
- DESCRIPTION
- -----------
+## DESCRIPTION
+
  This tool is a data visualisation tool for FIO (http://freecode.com/projects/fio) written on PyQtGraph (http://www.pyqtgraph.org).
 
  OVERVIEW
