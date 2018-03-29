@@ -1,4 +1,4 @@
-#FIO visualizer 1.1 13 Jan 2017
+# FIO visualizer 1.1 13 Jan 2017
 
 ## DESCRIPTION
 
