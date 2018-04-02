@@ -524,7 +524,7 @@ class uiMainWindow(object):
 
 def init_fio():
     global parsing_thread, fio_process, timer
-    numjobs = realtime_back.get_jobs(ui.fio_jobfile_path.text())
+    numjobs = realtime_back.get_jobs(str(ui.fio_jobfile_path.text()))
     read_iops_data = {
             'type':'r_iops',
             'all':[],
@@ -589,15 +589,21 @@ def init_fio():
     fio_all_data = [read_iops_data, read_bw_data, read_lat_data, write_iops_data, write_bw_data, write_lat_data]
 
     for entry in fio_all_data:
-        for i in range(1, (len(entry['job_vals']))):
-            entry['colors'].append(format(int(entry['colors'][0][1:],16) + (i * 2000), '06X'))
+        entry['colors'] = gen_colors(entry['colors'][0], numjobs)
         
     exit_code = [None]
-    parsing_thread = realtime_back.start_fio(ui.fio_jobfile_path.text(), fio_all_data)
+    parsing_thread = realtime_back.start_fio(str(ui.fio_jobfile_path.text()), fio_all_data)
     parsing_thread.start()
     timer = QtCore.QTimer()
     timer.timeout.connect(lambda: update(fio_all_data, parsing_thread, exit_code[0], timer))
     timer.start(1000)
+
+def gen_colors(base_color, numjobs):
+    colors = []
+    grad_weight = int(64000/numjobs)
+    for i in range(0, numjobs):
+        colors.append(format(int(base_color[1:], 16) + (i * grad_weight), '06X'))
+    return colors
 
 def kill_fio():
     try:
