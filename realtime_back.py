@@ -34,18 +34,22 @@ def parse_fio_output(riops, rbw, rlat, wiops, wbw, wlat, job_riops, job_rbw, job
                 rbw_tot = 0
                 wiops_tot = 0
                 wbw_tot = 0
+                w_lat_tmp = []
+                r_lat_tmp = []
 
                 for i in range(0, numjobs):
+                    r_lat_tmp.append(job_rlat[i][-1])
+                    w_lat_tmp.append(job_wlat[i][-1])
                     riops_tot+=job_riops[i][-1]
                     rbw_tot+=job_rbw[i][-1]
                     wiops_tot+=job_wiops[i][-1]
                     wbw_tot+=job_wbw[i][-1]
                 riops.append(riops_tot)
                 rbw.append(rbw_tot)
-                rlat.append(float(split[14]))
+                rlat.append(max(r_lat_tmp))
                 wiops.append(wiops_tot)
                 wbw.append(wbw_tot)
-                wlat.append(float(split[55]))
+                wlat.append(max(w_lat_tmp))
 
         except IndexError:
             poll_res = fio_process.poll()

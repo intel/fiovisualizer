@@ -57,7 +57,7 @@ Requires:
    - `# make install`
 
 5. Run Visualizer as root.
-   - `# ./fio-visualizer.py`
+   - `# ./fio_visualizer.py`
 
 
 #### Ubuntu steps
@@ -70,7 +70,7 @@ Requires:
    - `# make install`
 
 3. Run Visualizer as root.
-   - `# ./fio-visualizer.py`
+   - `# ./fio_visualizer.py`
 
 
 ## Limitations
