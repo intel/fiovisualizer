@@ -7,25 +7,25 @@ This tool is a realtime data visualisation tool for [FIO](http://freecode.com/pr
 This application is written in Python, using PyQtGraph to graph FIO data in realtime. Running as root is required because this application accesses block devices.
 
 ## Package Content
-README.md
+- README.md
   - This readme file
-LICENSE.txt
+- LICENSE.txt
   - License file   	
-fio_visualizer.py
+- fio_visualizer.py
   - The frontend for this application
-realtime_back.py
+- realtime_back.py
   - The backend for this application
-mainwindow.ui 
+- mainwindow.ui 
   - GUI definition part of the script
-Workloads:
+- Workloads:
   - Device
-     Block device workloads covering typical specifications, separated in SATA and NVMe sections
+    - Block device workloads covering typical specifications, separated in SATA and NVMe sections
   - Precondition
-     instruction and script files to prepare SSD for the testing.
+    - instruction and script files to prepare SSD for the testing.
   - Simulation
-     Workloads to simulate real applications.
+    - Workloads to simulate real applications.
   - MultiDevice
-     Workloads to test two or more drives at a time. Currently has limitted support due to improper handling of total performance in the script. 
+    - Workloads to test two or more drives at a time. Currently has limitted support due to improper handling of total performance in the script. 
 
 ## Installation
 Requires:
