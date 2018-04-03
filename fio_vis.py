@@ -592,7 +592,7 @@ def init_fio():
         entry['colors'] = gen_colors(entry['colors'][0], numjobs)
         
     exit_code = [None]
-    parsing_thread = realtime_back.start_fio(str(ui.fio_jobfile_path.text()), fio_all_data)
+    parsing_thread, fio_process = realtime_back.start_fio(str(ui.fio_jobfile_path.text()), fio_all_data, exit_code)
     parsing_thread.start()
     timer = QtCore.QTimer()
     timer.timeout.connect(lambda: update(fio_all_data, parsing_thread, exit_code[0], timer))
@@ -606,11 +606,8 @@ def gen_colors(base_color, numjobs):
     return colors
 
 def kill_fio():
-    try:
-        os.killpg(fio_process.pid, signal.SIGTERM)
-        fio_process_output, fio_process_error = fio_process.communicate()
-    except:
-        pass
+    os.killpg(fio_process.pid, signal.SIGTERM)
+    fio_process_output, fio_process_error = fio_process.communicate()
 
 def is_lat(entry):
     dtype = entry['type']
@@ -619,9 +616,8 @@ def is_lat(entry):
 def update(fio_data, parsing_thread, exit_code, timer):
     if parsing_thread.isAlive():
         for entry in fio_data:
-            if entry['checkb'].isChecked() and not is_lat(entry):
+            if entry['checkb'].isChecked():
                 entry['plot'].clear()
-
                 if entry['thread_check'].isChecked():
                     for i in range(0, len(entry['job_vals'])):
                         entry['plot'].plot(pen=entry['colors'][i]).setData(entry['job_vals'][i])
@@ -629,14 +625,8 @@ def update(fio_data, parsing_thread, exit_code, timer):
                 if entry['total_check'].isChecked():
                     entry['plot'].plot(pen=entry['colors'][0]).setData(entry['all'])
 
-            elif entry['checkb'].isChecked():
-                entry['plot'].clear()
-                if entry['total_check'].isChecked():
-                    entry['plot'].plot(pen=entry['colors'][0]).setData(entry['all'])
-                if entry['thread_check'].isChecked():
-                    entry['plot'].plot(pen=entry['colors'][0]).setData(entry['all'])
-
     else:
+        timer.stop()
         msg = QtGui.QMessageBox()
         if exit_code==0:
             msg.about(msg, 'Informational', 'FIO succefully finished with exit code: '+str(exit_code))
@@ -645,7 +635,6 @@ def update(fio_data, parsing_thread, exit_code, timer):
         else:
             fio_process_output, fio_process_error = fio_process.communicate()
             msg.about(msg, 'Informational', 'FIO was terminated with exit code: '+str(exit_code)+'\n\nSTDERR :'+str(fio_process_error))
-        timer.stop()
 
 application = QtGui.QApplication([])
 pg.setConfigOptions(antialias=True)
