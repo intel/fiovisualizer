@@ -32,7 +32,7 @@ Requires:
 
    - FIO 2.15 or newer (2.1.x is no longer supported) found [here](https://github.com/axboe/fio/releases)
    - PyQtGraph found [here](http://www.pyqtgraph.org/)
-   - Python 2.7 and 3+
+   - Python 2.7 or 3+ [here](https://www.python.org/downloads/)
    - PyQt 4.8+ or PySide
    - numpy
    - scipy
@@ -41,7 +41,7 @@ Requires:
 
 0. You should have python and PyQt installed with this distro
 
-1. Install pyqtgraph-develop (0.9.9 required) form [here](http://www.pyqtgraph.org)
+1. Install pyqtgraph-develop (0.9.9 required) from [here](http://www.pyqtgraph.org)
    - `$ python setup.py install`
 
 2. Install Cyphon from [here](http://cython.org) Version 0.21 or higher is required.
@@ -74,8 +74,8 @@ Requires:
 
 
 ## Limitations
-1. Increased CPU load with numjobs > 4 and all threads plotting. Avoid plotting all threads with numjobs > 4 or disable unneccessary ones to save CPU time.
-2. Multi-jobs configurations files (i.e. [job1]... [job2]) are not supported at the moment. The total amount of jobs if every workload has "numjobs" specified too are not correctly parsed. This can still be implemented manually specifing it in the code. See line #986.
+1. Increased CPU load with numjobs > 4 and all threads plotting. Avoid plotting all threads with numjobs > 4 or disable unneccessary ones to save CPU resources.
+2. Multi-jobs configurations files (i.e. [job1]... [job2]) are not supported at the moment. The total amount of jobs if every workload has "numjobs" specified too are not correctly parsed. This can still be implemented manually specifing it in the code.
 
 ## Todo
 Continue working on workload profiles for new Intel SSDs. 
