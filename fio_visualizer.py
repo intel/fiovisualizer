@@ -49,15 +49,20 @@ class uiMainWindow(object):
         self.WIN_WIDTH = 768
         self.MAX_SIZE = 16777215
 
-    def select_jobfile(self):        
+    def select_jobfile(self):
         if (QtCore.QT_VERSION_STR >= "5"):
             jobfile = QtGui.QFileDialog.getOpenFileName()[0]
         else:
             jobfile = QtGui.QFileDialog.getOpenFileName()
         self.fio_jobfile_path.setText(jobfile)
+        if not jobfile:
+            self.start_button.setEnabled(False)
+            self.stop_button.setEnabled(False)
+            self.fio_jobfile_contents.clear()
         try:
             text = open('' + jobfile).read()
             self.fio_jobfile_contents.setPlainText(text)
+            self.start_button.setEnabled(True)
         except IOError:
             pass
         self.browse_button.setChecked(False)
@@ -227,6 +232,7 @@ class uiMainWindow(object):
         self.gridLayout_2.addWidget(self.start_button, 0, 0, 1, 1)
         self.stop_button = QtGui.QPushButton(self.frame_11)
         self.set_size(self.stop_button)
+        self.start_button.setEnabled(False)
 
         font = QtGui.QFont()
         font.setPointSize(9)
@@ -235,6 +241,7 @@ class uiMainWindow(object):
         self.stop_button.setStyleSheet(_fromUtf8(""))
         self.stop_button.setObjectName(_fromUtf8("stop_button"))
         self.gridLayout_2.addWidget(self.stop_button, 1, 0, 1, 1)
+        self.stop_button.setEnabled(False)
         self.frame = QtGui.QFrame(self.frame_10)
         self.set_size(self.frame)
 
@@ -320,7 +327,6 @@ class uiMainWindow(object):
         self.gridLayout_12.setObjectName(_fromUtf8("gridLayout_12"))
         self.read_iops_checkbox = QtGui.QCheckBox(self.frame_4)
         self.set_size(self.read_iops_checkbox)
-
         font = QtGui.QFont()
         font.setPointSize(9)
         self.read_iops_checkbox.setFont(font)
@@ -335,7 +341,6 @@ class uiMainWindow(object):
         self.read_iops_threads_checkbox = QtGui.QCheckBox(self.frame_4)
         self.set_size_pol(self.read_iops_threads_checkbox, "read_iops_threads_checkbox", False, (1, 1, 1, 1), self.gridLayout_12, self.frame_4)
         self.gridLayout_11.addWidget(self.frame_4, 0, 0, 1, 1)
-
         self.frame_5 = QtGui.QFrame(self.tab)
         self.set_size(self.frame_5)
         self.frame_5.setFrameShape(QtGui.QFrame.Box)
@@ -343,7 +348,6 @@ class uiMainWindow(object):
         self.frame_5.setObjectName(_fromUtf8("frame_5"))
         self.gridLayout_13 = QtGui.QGridLayout(self.frame_5)
         self.gridLayout_13.setObjectName(_fromUtf8("gridLayout_13"))
-
         self.read_bw_checkbox = QtGui.QCheckBox(self.frame_5)
         self.set_size_pol(self.read_bw_checkbox, "read_bw_checkbox", True, (0,0,2,1), self.gridLayout_13, self.frame_5)
         self.read_bw_total_checkbox = QtGui.QCheckBox(self.frame_5)
@@ -367,9 +371,9 @@ class uiMainWindow(object):
         self.read_lat_checkbox = QtGui.QCheckBox(self.frame_9)
         self.set_size_pol(self.read_lat_checkbox, "read_lat_checkbox", True, (0,0,2,1), self.gridLayout_14, self.frame_9)
         self.read_lat_max_checkbox = QtGui.QCheckBox(self.frame_9)
-        self.set_size_pol(self.read_lat_max_checkbox, "read_lat_max_checkbox", False, (0,1,1,1), self.gridLayout_14, self.frame_9)
+        self.set_size_pol(self.read_lat_max_checkbox, "read_lat_max_checkbox", True, (0,1,1,1), self.gridLayout_14, self.frame_9)
         self.read_lat_threads_checkbox = QtGui.QCheckBox(self.frame_9)
-        self.set_size_pol(self.read_lat_threads_checkbox, "read_lat_threads_checkbox", True, (1,1,1,1), self.gridLayout_14, self.frame_9)
+        self.set_size_pol(self.read_lat_threads_checkbox, "read_lat_threads_checkbox", False, (1,1,1,1), self.gridLayout_14, self.frame_9)
         self.gridLayout_11.addWidget(self.frame_9, 2, 0, 1, 1)
         self.tabWidget.addTab(self.tab, _fromUtf8(""))
         self.tab_2 = QtGui.QWidget()
@@ -390,7 +394,7 @@ class uiMainWindow(object):
         self.write_iops_total_checkbox = QtGui.QCheckBox(self.frame_6)
         self.set_size_pol(self.write_iops_total_checkbox, "write_iops_total_checkbox", True, (0,1,1,1), self.gridLayout_10, self.frame_6)
         self.write_iops_threads_checkbox = QtGui.QCheckBox(self.frame_6)
-        self.set_size_pol(self.write_iops_threads_checkbox, "write_iops_threads_checkbox", True, (1,1,1,1), self.gridLayout_10, self.frame_6)
+        self.set_size_pol(self.write_iops_threads_checkbox, "write_iops_threads_checkbox", False, (1,1,1,1), self.gridLayout_10, self.frame_6)
         self.gridLayout.addWidget(self.frame_6, 0, 0, 1, 1)
         self.frame_7 = QtGui.QFrame(self.tab_2)
 
@@ -406,7 +410,7 @@ class uiMainWindow(object):
         self.write_bw_total_checkbox = QtGui.QCheckBox(self.frame_7)
         self.set_size_pol(self.write_bw_total_checkbox, "write_bw_total_checkbox", True, (0,1,1,1), self.gridLayout_9, self.frame_7)
         self.write_bw_threads_checkbox = QtGui.QCheckBox(self.frame_7)
-        self.set_size_pol(self.write_bw_threads_checkbox, "write_bw_threads_checkbox", True, (1,1,1,1), self.gridLayout_9, self.frame_7)
+        self.set_size_pol(self.write_bw_threads_checkbox, "write_bw_threads_checkbox", False, (1,1,1,1), self.gridLayout_9, self.frame_7)
         self.gridLayout.addWidget(self.frame_7, 1, 0, 1, 1)
         self.frame_8 = QtGui.QFrame(self.tab_2)
 
@@ -420,9 +424,9 @@ class uiMainWindow(object):
         self.write_lat_checkbox = QtGui.QCheckBox(self.frame_8)
         self.set_size_pol(self.write_lat_checkbox, "write_lat_checkbox", True, (0,0,2,1), self.gridLayout_4, self.frame_8)
         self.write_lat_max_checkbox = QtGui.QCheckBox(self.frame_8)
-        self.set_size_pol(self.write_lat_max_checkbox, "write_lat_max_checkbox", False, (0, 1, 1, 1), self.gridLayout_4, self.frame_8)
+        self.set_size_pol(self.write_lat_max_checkbox, "write_lat_max_checkbox", True, (0, 1, 1, 1), self.gridLayout_4, self.frame_8)
         self.write_lat_threads_checkbox = QtGui.QCheckBox(self.frame_8)
-        self.set_size_pol(self.write_lat_threads_checkbox, "write_lat_threads_checkbox", True, (1,1,1,1), self.gridLayout_4, self.frame_8)
+        self.set_size_pol(self.write_lat_threads_checkbox, "write_lat_threads_checkbox", False, (1,1,1,1), self.gridLayout_4, self.frame_8)
         self.gridLayout.addWidget(self.frame_8, 2, 0, 1, 1)
         self.tabWidget.addTab(self.tab_2, _fromUtf8(""))
         self.gridLayout_5.addWidget(self.tabWidget, 1, 0, 1, 2)
@@ -587,16 +591,16 @@ def init_fio():
             }
 
     fio_all_data = [read_iops_data, read_bw_data, read_lat_data, write_iops_data, write_bw_data, write_lat_data]
-
     for entry in fio_all_data:
         entry['colors'] = gen_colors(entry['colors'][0], numjobs)
-        
     exit_code = [None]
     parsing_thread, fio_process = realtime_back.start_fio(str(ui.fio_jobfile_path.text()), fio_all_data, exit_code)
     parsing_thread.start()
     timer = QtCore.QTimer()
     timer.timeout.connect(lambda: update(fio_all_data, parsing_thread, exit_code[0], timer))
     timer.start(1000)
+    ui.stop_button.setEnabled(True)
+    ui.start_button.setEnabled(False)
 
 def gen_colors(base_color, numjobs):
     colors = []
@@ -608,6 +612,8 @@ def gen_colors(base_color, numjobs):
 def kill_fio():
     os.killpg(fio_process.pid, signal.SIGTERM)
     fio_process_output, fio_process_error = fio_process.communicate()
+    ui.start_button.setEnabled(True)
+    ui.stop_button.setEnabled(False)
 
 def is_lat(entry):
     dtype = entry['type']
