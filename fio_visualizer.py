@@ -214,6 +214,29 @@ class uiMainWindow(object):
         self.frame_11 = QtGui.QFrame(self.frame_10)
         self.set_size(self.frame_11)
 
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.client_box = QtGui.QLabel(self.frame_10)
+        self.client_box.setFont(font)
+        self.client_box.setAccessibleName(_fromUtf8(""))
+        self.client_box.setStyleSheet(_fromUtf8(""))
+        self.client_box.setObjectName(_fromUtf8("client_box"))
+        self.client_box.setText("Client:")
+        self.client_box.setScaledContents(True)
+        self.client_box.setScaledContents(False)
+        self.set_size(self.client_box)
+
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.client_box_edit = QtGui.QLineEdit(self.frame_10)
+        self.client_box_edit.setFont(font)
+        self.client_box_edit.setPlaceholderText("localhost")
+        self.client_box_edit.setTextMargins(0, 0, 1, 1)
+        self.set_size(self.client_box_edit)
+
+        self.gridLayout_5.addWidget(self.client_box, 0, 0, 1, 1)
+        self.gridLayout_5.addWidget(self.client_box_edit, 0, 1, 1, 1)
+
         self.frame_11.setAccessibleName(_fromUtf8(""))
         self.frame_11.setFrameShape(QtGui.QFrame.WinPanel)
         self.frame_11.setFrameShadow(QtGui.QFrame.Raised)
@@ -245,7 +268,7 @@ class uiMainWindow(object):
         self.frame = QtGui.QFrame(self.frame_10)
         self.set_size(self.frame)
 
-        self.gridLayout_5.addWidget(self.frame_11, 2, 0, 1, 2)
+        self.gridLayout_5.addWidget(self.frame_11, 3, 0, 1, 2)
         self.frame.setAccessibleName(_fromUtf8(""))
         self.frame.setFrameShape(QtGui.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtGui.QFrame.Raised)
@@ -296,7 +319,7 @@ class uiMainWindow(object):
         self.browse_button.setAutoExclusive(False)
         self.browse_button.setObjectName(_fromUtf8("browse_button"))
         self.gridLayout_7.addWidget(self.browse_button, 1, 1, 1, 1)
-        self.gridLayout_5.addWidget(self.frame, 0, 0, 1, 2)
+        self.gridLayout_5.addWidget(self.frame, 1, 0, 1, 2)
         self.gridLayout_7.setMargin(3)
 
         self.tabWidget = QtGui.QTabWidget(self.frame_10)
@@ -423,8 +446,8 @@ class uiMainWindow(object):
         self.set_size_pol(self.write_lat_threads_checkbox, "write_lat_threads_checkbox", False, (1,1,1,1), self.gridLayout_4, self.frame_8)
         self.gridLayout.addWidget(self.frame_8, 2, 0, 1, 1)
         self.tabWidget.addTab(self.tab_2, _fromUtf8(""))
-        self.gridLayout_5.addWidget(self.tabWidget, 1, 0, 1, 2)
-        self.gridLayout_6.addWidget(self.frame_10, 0, 0, 1, 1)
+        self.gridLayout_5.addWidget(self.tabWidget, 2, 0, 1, 2)
+        self.gridLayout_6.addWidget(self.frame_10, 0, 0, 2, 1)
         self.dockWidget.setWidget(self.dockWidgetContents)
         MainWindow.addDockWidget(QtCore.Qt.DockWidgetArea(2), self.dockWidget)
         self.actionSettings = QtGui.QAction(MainWindow)
@@ -450,6 +473,7 @@ class uiMainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "FIO visualizing tool", None))
+        self.client_box.setText(_translate("MainWindow", "Client:", None))
         self.start_button.setText(_translate("MainWindow", "START", None))
         self.stop_button.setText(_translate("MainWindow", "STOP", None))
         self.label_8.setText(_translate("MainWindow", "Jobfile:", None))
@@ -588,7 +612,7 @@ def init_fio():
     for entry in fio_all_data:
         entry['colors'] = gen_colors(entry['colors'][0], numjobs)
     exit_code = [None]
-    parsing_thread, fio_process = realtime_back.start_fio(str(ui.fio_jobfile_path.text()), fio_all_data, exit_code)
+    parsing_thread, fio_process = realtime_back.start_fio(str(ui.fio_jobfile_path.text()), str(ui.client_box_edit.text()), fio_all_data, exit_code)
     parsing_thread.start()
     timer = QtCore.QTimer()
     timer.timeout.connect(lambda: update(fio_all_data, parsing_thread, exit_code[0], timer))

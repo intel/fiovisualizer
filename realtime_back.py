@@ -9,8 +9,11 @@ import shlex
 import sys
 import time
 
-def start_fio(path, storage, exit_code):
-    fio_process = subprocess.Popen(['fio', '--minimal', '--eta=0', '--status-interval=1', path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, preexec_fn=os.setpgrp)
+def start_fio(path, client, storage, exit_code):
+    remote_server = ""
+    if client:
+        remote_server = "--client=" + client
+    fio_process = subprocess.Popen(['fio', remote_server, '--minimal', '--eta=0', '--status-interval=1', path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, preexec_fn=os.setpgrp)
     parsing_thread = threading.Thread(target=lambda: parse_fio_output(storage[0]['all'], storage[1]['all'], storage[2]['all'], storage[3]['all'], storage[4]['all'], storage[5]['all'], storage[0]['job_vals'], storage[1]['job_vals'], storage[2]['job_vals'], storage[3]['job_vals'], storage[4]['job_vals'], storage[5]['job_vals'], fio_process, get_jobs(path), exit_code), args=())
     return parsing_thread, fio_process
 
