@@ -284,13 +284,6 @@ class uiMainWindow(object):
         self.fio_jobfile_contents.setObjectName(_fromUtf8("fio_jobfile_contents"))
         self.gridLayout_7.addWidget(self.fio_jobfile_contents, 2, 0, 1, 2)
 
-        sizePolicy.setVerticalStretch(0)
-        font = QtGui.QFont()
-        font.setPointSize(9)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-
         self.browse_button = QtGui.QPushButton(self.frame)
         self.set_size(self.browse_button)
         font = QtGui.QFont()
