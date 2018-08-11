@@ -27,7 +27,7 @@ def parse_fio_output(riops, rbw, rlat, wiops, wbw, wlat, job_riops, job_rbw, job
                 job_riops[cur_job].append(int(split[7]))
                 job_rbw[cur_job].append(int(split[6]))
                 job_rlat[cur_job].append(float(split[15]))
-                job_wiops[cur_job].append(int(split[48]))
+                job_wiops[cur_job].append(float(split[48]))
                 job_wbw[cur_job].append(int(split[47]))
                 job_wlat[cur_job].append(float(split[56]))
                 cur_job+=1
