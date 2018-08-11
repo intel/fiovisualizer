@@ -297,6 +297,7 @@ class uiMainWindow(object):
         self.browse_button.setObjectName(_fromUtf8("browse_button"))
         self.gridLayout_7.addWidget(self.browse_button, 1, 1, 1, 1)
         self.gridLayout_5.addWidget(self.frame, 0, 0, 1, 2)
+        self.gridLayout_7.setMargin(3)
 
         self.tabWidget = QtGui.QTabWidget(self.frame_10)
         self.set_size(self.tabWidget)
