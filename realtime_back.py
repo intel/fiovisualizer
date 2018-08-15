@@ -30,8 +30,11 @@ def parse_fio_output(riops, rbw, rlat, wiops, wbw, wlat, job_riops, job_rbw, job
         try:
             if cur_job < numjobs:
                 output = fio_process.stdout.readline()
+                if not output.startswith("3;"):
+                    continue
                 split = output.split(';')
-                split[129]
+                if len(split) < 129:
+                    continue
                 job_riops[cur_job].append(int(split[7]))
                 job_rbw[cur_job].append(int(split[6]))
                 job_rlat[cur_job].append(float(split[15]))
