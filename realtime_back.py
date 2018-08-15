@@ -29,7 +29,8 @@ def parse_fio_output(riops, rbw, rlat, wiops, wbw, wlat, job_riops, job_rbw, job
     while fio_process.poll() == None:
         try:
             if cur_job < numjobs:
-                split = fio_process.stdout.readline().split(';')
+                output = fio_process.stdout.readline()
+                split = output.split(';')
                 split[129]
                 job_riops[cur_job].append(int(split[7]))
                 job_rbw[cur_job].append(int(split[6]))
