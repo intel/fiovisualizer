@@ -16,7 +16,7 @@ def start_fio(path, client, storage, exit_code):
     if client:
         fio_args.append("--client=" + client)
     fio_args.append("--minimal")
-    fio_args.append("--eta=0")
+    fio_args.append("--eta=never")
     fio_args.append("--status-interval=1")
     fio_args.append(path)
     fio_process = subprocess.Popen(fio_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, preexec_fn=os.setpgrp)
