@@ -15,7 +15,8 @@ def start_fio(path, client, storage, exit_code):
     remote_server = ""
     if client:
         fio_args.append("--client=" + client)
-    fio_args.append("--minimal")
+    fio_args.append("--output-format=terse")
+    fio_args.append("--terse-version=3")
     fio_args.append("--eta=never")
     fio_args.append("--status-interval=1")
     fio_args.append(path)
