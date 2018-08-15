@@ -1,4 +1,4 @@
-## Description
+# fiovisualizer
 
 This tool is a realtime data visualisation tool for [FIO](http://freecode.com/projects/fio) written using [PyQtGraph](http://www.pyqtgraph.org).
 
@@ -26,6 +26,8 @@ This application is written in Python, using PyQtGraph to graph FIO data in real
     - Workloads to simulate real applications.
   - MultiDevice
     - Workloads to test two or more drives at a time. Currently has limitted support due to improper handling of total performance in the script. 
+
+# Setup
 
 ## Installation
 Requires:
@@ -72,6 +74,7 @@ Requires:
 3. Run Visualizer as root.
    - `# ./fio_visualizer.py`
 
+# Development notes
 
 ## Limitations
 1. Increased CPU load with numjobs > 4 and all threads plotting. Avoid plotting all threads with numjobs > 4 or disable unneccessary ones to save CPU resources.
