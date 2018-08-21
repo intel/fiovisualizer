@@ -76,6 +76,16 @@ Requires:
 
 # Development notes
 
+## Design flaw
+
+fiovisualizer scrapes terse data from the backend instance, and uses that
+data to plot progress. A much more sensible approach is instead to be
+implemented as a proper fio client, and use the network model to recieve
+data. This is already implemented upstream within fio, through the gfio
+client, and gfio has much more capabilities than fiovisualizer.
+
+Consider using gfio directly instead.
+
 ## Limitations
 1. Increased CPU load with numjobs > 4 and all threads plotting. Avoid plotting all threads with numjobs > 4 or disable unneccessary ones to save CPU resources.
 2. Multi-jobs configurations files (i.e. [job1]... [job2]) are not supported at the moment. The total amount of jobs if every workload has "numjobs" specified too are not correctly parsed. This can still be implemented manually specifing it in the code.
