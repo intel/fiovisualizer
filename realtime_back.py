@@ -10,10 +10,17 @@ import sys
 import time
 
 def start_fio(path, client, storage, exit_code):
+    fio_args = list()
+    fio_args.append("fio")
     remote_server = ""
     if client:
-        remote_server = "--client=" + client
-    fio_process = subprocess.Popen(['fio', remote_server, '--minimal', '--eta=0', '--status-interval=1', path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, preexec_fn=os.setpgrp)
+        fio_args.append("--client=" + client)
+    fio_args.append("--output-format=terse")
+    fio_args.append("--terse-version=3")
+    fio_args.append("--eta=never")
+    fio_args.append("--status-interval=1")
+    fio_args.append(path)
+    fio_process = subprocess.Popen(fio_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, preexec_fn=os.setpgrp)
     parsing_thread = threading.Thread(target=lambda: parse_fio_output(storage[0]['all'], storage[1]['all'], storage[2]['all'], storage[3]['all'], storage[4]['all'], storage[5]['all'], storage[0]['job_vals'], storage[1]['job_vals'], storage[2]['job_vals'], storage[3]['job_vals'], storage[4]['job_vals'], storage[5]['job_vals'], fio_process, get_jobs(path), exit_code), args=())
     return parsing_thread, fio_process
 
@@ -22,8 +29,12 @@ def parse_fio_output(riops, rbw, rlat, wiops, wbw, wlat, job_riops, job_rbw, job
     while fio_process.poll() == None:
         try:
             if cur_job < numjobs:
-                split = fio_process.stdout.readline().split(';')
-                split[129]
+                output = fio_process.stdout.readline()
+                if not output.startswith("3;"):
+                    continue
+                split = output.split(';')
+                if len(split) < 129:
+                    continue
                 job_riops[cur_job].append(int(split[7]))
                 job_rbw[cur_job].append(int(split[6]))
                 job_rlat[cur_job].append(float(split[15]))
