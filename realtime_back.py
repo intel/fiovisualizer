@@ -33,7 +33,8 @@ def parse_fio_output(riops, rbw, rlat, wiops, wbw, wlat, job_riops, job_rbw, job
                 if not output.startswith("3;"):
                     continue
                 split = output.split(';')
-                if len(split) < 129:
+                if len(split) not in [ 121, 129 ]:
+                    print("Skipping fio output of unexpected length")
                     continue
                 job_riops[cur_job].append(int(split[7]))
                 job_rbw[cur_job].append(int(split[6]))
