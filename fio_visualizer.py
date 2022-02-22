@@ -547,6 +547,8 @@ class uiMainWindow(object):
 def init_fio():
     global parsing_thread, fio_process, timer
     numjobs = realtime_back.get_jobs(str(ui.fio_jobfile_path.text()))
+    if not numjobs:
+        numjobs = 1
     read_iops_data = {
             'type':'r_iops',
             'all':[],
